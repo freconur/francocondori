@@ -43,7 +43,7 @@ const Projects = () => {
               </ul>
               <p>{project.description}</p>
               <div className="link_project">
-                <a target='_blank'  className="preview" href={`${project.linkpage}`}>
+                <a target='_blank'  className="preview" href={`${project.link}`}>
                   <div>
                     <FontAwesomeIcon className="fav_icon"  icon={view} />
                     ver
