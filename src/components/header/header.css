@@ -29,7 +29,8 @@
 .perfil_info_container p {
   font-family: "Rubik";
   color: var(--colorText1);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  line-height: 25px;
 }
 .button_container button {
   border-radius: 5px;
