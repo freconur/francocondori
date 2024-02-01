@@ -18,7 +18,6 @@ const Projects = () => {
   useEffect(() => {
     getProjects();
   }, []);
-  console.log("allProjects", allProjects);
   return (
     <div id="projects" className="projects">
       <h1>Mis Proyectos</h1>
@@ -31,30 +30,36 @@ const Projects = () => {
             <li className="info_project" key={index}>
               {/* <Link> */}
               <div className="image_container">
-                <img src={project.image} alt="" />
+                <img className="image_project" src={project.image} alt="" />
               </div>
-              <h2>{project.name}</h2>
-              <ul className="tech_list_container">
-                {project.technologies?.map((tech, index) => (
-                  <li className="tech" key={index}>
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-              <p>{project.description}</p>
-              <div className="link_project">
-                <a target='_blank'  className="preview" href={`${project.link}`}>
-                  <div>
-                    <FontAwesomeIcon className="fav_icon"  icon={view} />
-                    ver
-                  </div>
-                </a>
-                <a target='_blank' className="github" href={`${project.github}`}>
-                  <div>
-                    <FontAwesomeIcon className="fav_icon" icon={github} />
-                    github repo
-                  </div>
-                </a>
+              <div className="info_container">
+                <h2>{project.name}</h2>
+                <ul className="tech_list_container">
+                  {project.technologies?.map((tech, index) => (
+                    <li className="tech" key={index}>
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+                <p>{project.description}</p>
+                <div className="link_project">
+                  {
+                    project.id === "w5Z6ida71sbavd8S2KQd" ?
+                      null :
+                      <a target='_blank' className="preview" href={`${project.link}`}>
+                        <div>
+                          <FontAwesomeIcon className="fav_icon" icon={view} />
+                          ver
+                        </div>
+                      </a>
+                  }
+                  <a target='_blank' className="github" href={`${project.github}`}>
+                    <div>
+                      <FontAwesomeIcon className="fav_icon" icon={github} />
+                      github
+                    </div>
+                  </a>
+                </div>
               </div>
               {/* </Link> */}
             </li>
